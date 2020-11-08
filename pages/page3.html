@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Document</title>
+        <!-- CSS files -->
+    <link rel="stylesheet" href="../page_style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.8.5/tailwind.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <section class="text-gray-700 body-font">
+        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+          <div class="containers lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0" id="to-be-downloaded">
+            <img class="centeres object-cover object-center rounded" id="img" alt="hero" src="../try2.jpg" width="350px" height="500px">       <!-- change the image here -->
+            <div class="centered" ><p id="card_name" >Your Name</p></div>
+            <div class="centered mt-10" ><p id="title_name" >Your Title</p></div>
+          </div>
+
+          <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+            <div class="content_dropdown">
+              <p class="default">Select Fonts</p>
+              <div id="parent_font" class="dropdown_options">
+                <a id="Noto_Sans_KR" href="#" class="button1" alt="Button 1">Alegreya</a>
+                <a id="Grandstander" href="#" class="button2" alt="Button 2">Lora</a>
+                <a id="Grenze_Gotisch" href="#" class="button3" alt="Button 3">Montserrat</a>
+                <a id="Dancing_Script" href="#" class="button4" alt="Button 4">Open Sans</a>
+                <a id="Lobster" href="#" class="button5" alt="Button 5">PT Sans</a>
+                <a id="Pacifico" href="#" class="button6" alt="Button 6">Roboto</a>
+                <a id="Henny_Penny" href="#" class="button7" alt="Button 7">Henny Penny</a>
+              </div>
+          </div>
+            <div class="changing-dis">
+              <span>Select Font Size: </span>
+              <input type="range" id="setFont" name="vol" min="0" max="120">
+            </div>
+            <div class="changing-dis">
+              <span>Select  Name Color: </span>
+              <input class="ml-auto" type="color" value="#ff0000"  id='name_color_picker'>
+            </div>
+            <div class="changing-dis">
+              <span>Select Title Color: </span>
+              <input type="color" value="#ff0000"  id='title_color_picker'>  
+            </div>
+            <p>Your Name:</p>
+            <input class="additional-width" value="You Name" id="input" placeholder="enter your name" type="text">
+                         
+            <div class="align-side">
+              <table class="rotation" cellpadding="5">
+                <tr>
+                  <td>
+                    <div   onclick="alignNameVertical(true)" id="link1Btn" class="circle"><i class="fad fa-angle-up"></i></div>
+                  </td>
+                  <td>
+                    <div  onclick="alignName(false)"  id="link2Btn" class="circle"><i class="fad fa-angle-right"></i></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div id="link5Btn"  onclick="alignName(true)"  class="circle"><i class="fad fa-angle-left"></i></div></td>
+                  <td><div id="link6Btn"   onclick="alignNameVertical(false)" class="circle"     ><i class="fad fa-angle-down"></i></div></td>
+              </tr>  
+              </table>
+            </div>
+
+            <div class="flex justify-center">
+            </div>
+            <p>Your Job:</p>
+            <input class="additional-width" value="You Title" id="input_title" placeholder="enter your title" type="text">
+            <div class="align-side">
+              <table class="rotation" cellpadding="5">
+                <tr>
+                  <td>
+                    <div   onclick="alignTitleVertical(true)" id="link1Btn" class="circle"><i class="fad fa-angle-up"></i></div>
+                  </td>
+                  <td>
+                    <div  onclick="alignTitle(false)"  id="link2Btn" class="circle"><i class="fad fa-angle-right"></i></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div id="link5Btn"  onclick="alignTitle(true)"  class="circle"><i class="fad fa-angle-left"></i></div></td>
+                  <td><div id="link6Btn"   onclick="alignTitleVertical(false)" class="circle"     ><i class="fad fa-angle-down"></i></div></td>
+              </tr>  
+              </table>
+            </div>
+            <div class="flex justify-center">
+              <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" onclick="doCapture()">download</button>
+              <a  href="mailto:someone@example.com"><button class="ml-4 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">E-mail</button></a>                
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    <script type="text/javascript" src="html2canvas.js"></script>
+    <script type="text/javascript" src='page_script.js'></script>
+    <script src="./dropdown.js"></script>
+    <script src="./script.js"></script>
+
+</body>
+</html>

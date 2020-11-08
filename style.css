@@ -1,23 +1,278 @@
-html, body{
-    margin: 0;
-    padding: 0;
-    background-color: rgba(228, 236, 238, 0.5) !important;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
-.centered {
+
+body {
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.cards-list {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+  box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card .card_image,
+a {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  position: relative;
+}
+
+.card_after1::after {
+  content: "";
+  background-image: url("./try.jpg");
+  background-size: cover;
+  background-position: center;
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  background-color: red;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  transition: all .3s;
+  display:none;
+}
+
+.card_after1:hover::after {
+  transform: scale(1.1);
+  z-index: 1;
+  display:initial;
+}
+
+.card_after3::after {
+  content: "";
+  background-image: url("https://picsum.photos/id/237/200/300");
+  background-size: cover;
+  background-position: center;
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  background-color: red;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  transition: all .3s;
+  display:none;
+}
+
+.card_after3:hover::after {
+  transform: scale(1.1);
+  z-index: 1;
+  display:initial;
+}
+
+.card_after2::after {
+  content: "";
+  background-image: url("https://cdn.blackmilkclothing.com/media/wysiwyg/Wallpapers/PhoneWallpapers_FloralCoral.jpg");
+  background-size: cover;
+  background-position: center;
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  background-color: red;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  transition: all .3s;
+  display:none;
+}
+
+.card_after2:hover::after {
+  transform: scale(1.1);
+  z-index: 1;
+  display:initial;
+}
+
+.card_after4::after {
+  content: "";
+  background-image: url("https://picsum.photos/id/2/200/300");
+  background-size: cover;
+  background-position: center;
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  background-color: red;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  transition: all .3s;
+  display: none;
+
+
+
+}
+
+.card_after4:hover::after {
+  transform: scale(1.1);
+  z-index: 1;
+  opacity: 1;
+  display: initial;
+}
+
+.card .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.card .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: -80px;
+  height: 40px;
+}
+
+.title-white {
+  color: white;
+}
+
+.title-black {
+  color: black;
+}
+
+@media all and (max-width: 500px) {
+  .card-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+
+
+/*----------------------header--------------------------------------------------------------------------------*/
+
+
+.nav {
+  height: 50px;
+  width: 100%;
+  background-color: #4d4d4d;
+  position: relative;
+}
+
+.nav>.nav-header {
+  display: inline;
+}
+
+.nav>.nav-header>.nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav>.nav-btn {
+  display: none;
+}
+
+.nav>.nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+}
+.nav>.nav-links>p {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+}
+
+.nav>.nav-links>a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav>#nav-check {
+  display: none;
+}
+
+@media (max-width:600px) {
+  .nav>.nav-btn {
+    display: inline-block;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.containers {
-    position: relative;
-    text-align: center;
-    color: white;
-}
-.centeres{
-    margin-left: auto;
-    margin-right: auto;
-}
-.additional-width{
-    width: 50%;
+    right: 0px;
+    top: 0px;
+  }
+
+  .nav>.nav-btn>label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+
+  .nav>.nav-btn>label:hover,
+  .nav #nav-check:checked~.nav-btn>label {
+    background-color: rgba(0, 0, 0, 0.3);
+
+  }
+
+  .nav>.nav-btn>label>span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+
+  .nav>.nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+
+
+
+  }
+
+  .nav>.nav-links>a {
+    display: block;
+    width: 100%;
+  }
+
+  .nav>#nav-check:not(:checked)~.nav-links {
+    height: 0px;
+  }
+
+  .nav>#nav-check:checked~.nav-links {
+    height: 100% !important;
+    /*height: calc(100vh - 50px);*/
+    overflow-y: auto;
+    opacity: 0.7;
+
+  }
 }
